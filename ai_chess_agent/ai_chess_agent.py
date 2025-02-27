@@ -16,7 +16,17 @@ if "move_history" not in st.session_state:
 if "max_turns" not in st.session_state:
     st.session_state.max_turns = 5
 
-st.sidebar.title("Chess Agent Configuration")
+st.sidebar.image(r"C:\Users\AnalyticsIndiaMag\Desktop\aditya\PROJECTS\AGENTS-22\projects-2\ai_chess_agent\img.jpg")
+
+
+st.sidebar.markdown(
+    """
+    <h2 style="text-align: center;">♟️ Chess AI Settings</h2>
+    """,
+    unsafe_allow_html=True
+)
+
+
 openai_api_key = st.sidebar.text_input("Enter your OpenAI API key:", type="password")
 if openai_api_key:
     st.session_state.openai_api_key = openai_api_key
@@ -40,7 +50,12 @@ if max_turns_input:
     st.session_state.max_turns = max_turns_input
     st.sidebar.success(f"Max turns of total chess moves set to {st.session_state.max_turns}!")
 
-st.title("Chess with AutoGen Agents")
+st.markdown(
+    """
+    <h1 style='text-align: center;'>♜ Chess with AutoGen Agents ♞</h1>
+    """,
+    unsafe_allow_html=True
+)
 
 def available_moves() -> str:
     available_moves = [str(move) for move in st.session_state.board.legal_moves]

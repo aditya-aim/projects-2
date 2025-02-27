@@ -101,7 +101,7 @@ class HealthRecommendationAgent:
             model=OpenAIChat(
                 id="gpt-4o",
                 name="Health Recommendation Agent",
-                api_key=openai_key
+                api_key=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
             )
         )
     
